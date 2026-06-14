@@ -13,60 +13,24 @@ class PostController extends Controller
      */
     public function index()
     {
-        $categories = Category::get();
         $posts = Post::orderBy('created_at', 'DESC')->simplePaginate(5);
+        $categories = Category::get();
 
         return view("dashboard", [
-            "categories"=> $categories,
             "posts" => $posts,
+            "categories" => $categories,
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    public function create() {}
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function store(Request $request) {}
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Post $post)
-    {
-        //
-    }
+    public function show(Post $post) {}
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Post $post)
-    {
-        //
-    }
+    public function edit(Post $post) {}
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Post $post)
-    {
-        //
-    }
+    public function update(Request $request, Post $post) {}
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Post $post)
-    {
-        //
-    }
+    public function destroy(Post $post) {}
 }
