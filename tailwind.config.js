@@ -14,6 +14,11 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                brand: '#2563eb', // Your primary brand color (e.g., blue-600)
+                'brand-strong': '#1d4ed8', // Darker variant for hover states (e.g., blue-700)
+                'brand-medium': '#93c5fd', // For focus ring states
+            },
         },
     },
 
