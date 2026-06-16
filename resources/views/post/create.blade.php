@@ -7,20 +7,32 @@
                     @csrf
                     <!-- Image -->                    
                     <div>
-                        <x-input-label for="image" :value="__('Image')" />
-                        <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" required autofocus/>
-                        <x-input-error :messages="$errors->get('image')" class="mt-2" />
+                        <x-input-label for="images" :value="__('Image')" />
+                        <x-text-input id="images" class="block mt-1 w-full" type="file" name="images" autofocus/>
+                        <x-input-error :messages="$errors->get('images')" class="mt-2" />
                     </div>
                     <!-- Title -->
                     <div class="mt-4">
-                        <x-input-label for="title" :value="__('title')" />
-                        <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required autofocus/>
+                        <x-input-label for="title" :value="__('Title')" />
+                        <x-text-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" autofocus/>
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
+                    </div>
+                    
+                    <!-- Category -->
+                    <div class="mt-4">
+                        <x-input-label for="category_id" :value="__('Category')" />
+                        <select class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" name="category_id">
+                            <option value="">Select a Category</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
                     </div>
                     <!-- Content -->
                     <div class="mt-4">
-                        <x-input-label for="content" :value="__('content')" />
-                        <x-input-textarea id="content" class="block mt-1 w-full" name="content" required>{{ old('content') }}</x-input-textarea>
+                        <x-input-label for="content" :value="__('Content')" />
+                        <x-input-textarea id="content" class="block mt-1 w-full" name="content">{{ old('content') }}</x-input-textarea>
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
                     </div>
 

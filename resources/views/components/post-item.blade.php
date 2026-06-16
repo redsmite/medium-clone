@@ -26,7 +26,7 @@
     
     <div class="flex-shrink-0">
         <a href="#">
-            <img class="rounded-r-lg w-48 h-48 object-cover" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="Thumbnail graphic" />
+            <img class="rounded-r-lg w-48 h-48 object-cover" src="{{ Storage::url($post->images) }}" alt="Thumbnail graphic" />
         </a>
     </div>
     
