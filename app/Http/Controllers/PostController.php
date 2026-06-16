@@ -26,7 +26,9 @@ class PostController extends Controller
         return view("post.create");
     }
 
-    public function store(Request $request) {}
+    public function store(Request $request) {
+        dd($request->all());
+    }
 
     public function show(Post $post) {}
 
